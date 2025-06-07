@@ -14,7 +14,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 --
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+-- vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
@@ -52,3 +52,25 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- vim: ts=2 sts=2 sw=2 et
+--
+-- My keymaps
+--
+vim.keymap.set('n', '<leader>H', '<c-w>h')
+vim.keymap.set('n', '<leader>J', '<c-w>j')
+vim.keymap.set('n', '<leader>K', '<c-w>k')
+vim.keymap.set('n', '<leader>L', '<c-w>l')
+vim.keymap.set('n', '<leader>W', '<c-w>w')
+vim.keymap.set('n', '<leader>%', ':vsplit<cr>')
+vim.keymap.set('n', '<leader>"', ':split<cr>')
+vim.keymap.set('n', '<leader>l', 'gt')
+vim.keymap.set('n', '<leader>h', 'gT')
+vim.keymap.set('i', 'jj', '<esc>')
+vim.keymap.set('v', '<leader>p', '"_dP')
+vim.keymap.set('n', '<leader>n', ':noh<cr>')
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', 'Q', '<nop>')
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
+vim.keymap.set('v', 'J', ":m '>+1<cr>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<cr>gv=gv")

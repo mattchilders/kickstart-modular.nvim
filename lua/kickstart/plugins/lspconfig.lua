@@ -196,6 +196,8 @@ return {
       --  By default, Neovim doesn't support everything that is in the LSP specification.
       --  When you add blink.cmp, luasnip, etc. Neovim now has *more* capabilities.
       --  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
+      local config = require 'lspconfig'
+      local on_attach = config.on_attach
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 
       -- Enable the following language servers
@@ -210,7 +212,11 @@ return {
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        -- pyright = {},
+        pyright = {
+          on_attach = on_attach,
+          capabilities = capabilities,
+          filetypes = { 'python' },
+        },
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
